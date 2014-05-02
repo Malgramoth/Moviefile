@@ -1,0 +1,17 @@
+﻿@model Moviefile.web.Models.ActorDetailsViewModel
+@{
+    ViewBag.Title = "ActorDetails";
+}
+
+<h2>ActorDetails</h2>
+
+<p><b>Title: </b> @Model.Actor.Name</p>
+
+<h3>Actors</h3>
+<ul>
+    @foreach (var movie in Model.Movies)
+    {
+        <li>@Html.ActionLink(movie.Title, "MovieDetails", new { movieId = movie.Id })</li>
+    }
+</ul>
+
